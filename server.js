@@ -16,7 +16,8 @@ app.use(morgan("tiny"));
 app.use(express.urlencoded({ extended: true }));
 
 //view engine
-app.set("view engine", "ejs");
+//app.set("view engine", "html");
+app.use(express.static(path.join(__dirname, "views")));
 
 //assets
 app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
