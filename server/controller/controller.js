@@ -28,7 +28,17 @@ exports.create = (req, res) => {
 };
 
 //return users
-exports.find = (req, res) => {};
+exports.find = (req, res) => {
+  Userdb.find()
+    .then((user) => {
+      res.send(user);
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .send({ message: err.message || "error while retrieving user info" });
+    });
+};
 
 //update user by id
 
