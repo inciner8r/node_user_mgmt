@@ -42,7 +42,23 @@ exports.find = (req, res) => {
 
 //update user by id
 
-exports.update = (req, res) => {};
+exports.update = (req, res) => {
+  if (!req.body) {
+    return res.status(500).send({ message: "Data to update is empty" });
+  }
+  const id = req.params.id;
+  Userdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    .then((data) => {
+      if (!data) {
+        res.status(404).send({ message: `cannot update user not found maybe` });
+      } else {
+        res.send(data);
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({ message: "error update user info" });
+    });
+};
 
 //delete a user with id
 exports.delete = (req, res) => {};
