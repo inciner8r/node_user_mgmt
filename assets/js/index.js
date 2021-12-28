@@ -21,3 +21,21 @@ $("#update_user").submit(function (event) {
     alert("data updated");
   });
 });
+
+if (window.location.pathname == "/") {
+  $ondelete = $(".table tbody td a");
+  $ondelete.click(function () {
+    let id = $(this).attr("data-id");
+
+    let request = {
+      url: `http://localhost:3000/api/users/${id}`,
+      method: "DELETE",
+    };
+    if (confirm("Delete?")) {
+      $.ajax(request).done(function (respnse) {
+        alert("data deleted");
+        location.reload();
+      });
+    }
+  });
+}
