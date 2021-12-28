@@ -14,7 +14,11 @@
           <i class="fas fa-pencil"></i>
         </span>
       </a>
-      <a class="btn border-shadow delete" data-id="<%= users[i]._id %>">
+      <a
+        class="btn border-shadow delete"
+        data-id="<%= users[i]._id %>"
+        onclick="del()"
+      >
         <span class="text-gradient">
           <i class="fas fa-times"></i>
         </span>

@@ -23,7 +23,8 @@ $("#update_user").submit(function (event) {
 });
 
 if (window.location.pathname == "/") {
-  $ondelete = $(".table tbody td a");
+  console.log("exec");
+  $ondelete = $(".table tbody td .delete");
   $ondelete.click(function () {
     let id = $(this).attr("data-id");
 
