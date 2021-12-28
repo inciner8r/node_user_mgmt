@@ -1,4 +1,4 @@
-<form method="POST" id="add_user">
+<form action="/api/users" method="POST" id="add_user">
   <div class="new_user">
     <div class="form-group">
       <label for="name" class="text-dark">Name</label>
@@ -32,7 +32,13 @@
       </div>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn text-dark update">Save</button>
+      <button
+        type="submit"
+        class="btn text-dark update"
+        onclick="add_user_btn()"
+      >
+        Save
+      </button>
     </div>
   </div>
 </form>

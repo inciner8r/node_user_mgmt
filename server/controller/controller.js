@@ -5,7 +5,6 @@ exports.create = (req, res) => {
     res.status(400).send({ message: "Content empty" });
     return;
   }
-
   const user = new Userdb({
     name: req.body.name,
     email: req.body.email,
@@ -17,13 +16,13 @@ exports.create = (req, res) => {
   user
     .save(user)
     .then((data) => {
-      res.send(data);
+      //res.send(data);
+      res.redirect("/add-user");
     })
     .catch((err) => {
-      res.status(500),
-        send({
-          message: err.message || "some error occured",
-        });
+      res.status(500).send({
+        message: err.message || "some error occured",
+      });
     });
 };
 
