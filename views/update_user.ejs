@@ -37,26 +37,26 @@
         <div class="form-group">
           <label for="gender" class="text-dark">gender</label>
           <div class="radio inline">
-            <input type="radio" name="gender" placeholder="male" <%= user.gender
-            == 'male'?'checked':"" %> />
+            <input type="radio" name="gender" placeholder="male" value="male"
+            <%= user.gender == 'male'?'checked':"" %> />
             <label for="gender" class="text-dark">male</label>
           </div>
           <div class="radio inline">
-            <input type="radio" name="gender" placeholder="female" <%=
-            user.gender == 'female'?'checked':"" %> />
+            <input type="radio" name="gender" placeholder="female"
+            value="female" <%= user.gender == 'female'?'checked':"" %> />
             <label for="gender" class="text-dark">female</label>
           </div>
         </div>
         <div class="form-group">
           <label for="status" class="text-dark">status</label>
           <div class="radio inline">
-            <input type="radio" name="status" placeholder="active" <%=
-            user.status == 'active'?'checked':"" %>/>
+            <input type="radio" name="status" placeholder="active"
+            value="active" <%= user.status == 'active'?'checked':"" %>/>
             <label for="status" class="text-dark">active</label>
           </div>
           <div class="radio inline">
-            <input type="radio" name="status" placeholder="inactive" <%=
-            user.status == 'inactive'?'checked':"" %>/>
+            <input type="radio" name="status" placeholder="inactive"
+            value="inactive" <%= user.status == 'inactive'?'checked':"" %>/>
             <label for="status" class="text-dark">inactive</label>
           </div>
         </div>
